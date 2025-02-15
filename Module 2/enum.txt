@@ -1,11 +1,11 @@
 using System;
 
-public class MyProgram
+public class Enum
 {
     public static void Main(string[] args)
     {
-        // Design a program using flowgorithm that asks the user to enter the weight of a package and then displays the shipping charges. The ABC Fast Freight Shipping Company charges the following rates:
-        // 
+        // Design a program that asks the user to enter the weight of a package and then displays the shipping charges. The ABC Fast Freight Shipping Company charges the following rates:
+        // enum weight specification
         // Weight of Package Rate per Pound
         // 2 pounds or less $1.10
         // Over 2 pounds but not more than 6 pounds $2.20
@@ -21,6 +21,7 @@ public class MyProgram
         // Request user input package weight.
         packageW = inputValue();
 
+        // nested enum weight category
         // Allocate package weight charges
         if (packageW <= 2)
         {
