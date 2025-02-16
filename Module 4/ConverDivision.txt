@@ -1,0 +1,64 @@
+using System;
+
+namespace ConversionDivisionApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                Console.WriteLine("Enter the first number:");
+                string input1 = Console.ReadLine();
+
+                Console.WriteLine("Enter the second number:");
+                string input2 = Console.ReadLine();
+
+                int result = Divide(input1, input2);
+
+                Console.WriteLine($"The result of the division is: {result}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+            }
+            finally
+            {
+                Console.WriteLine("Program finished. Press any key to exit.");
+                Console.ReadKey();
+            }
+
+        }
+
+        static int Divide(string num1, string num2)
+        {
+            try
+            {
+                int number1 = Convert.ToInt32(num1);
+                int number2 = Convert.ToInt32(num2);
+
+                return number1 / number2;
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Error: Invalid input format. Please enter valid integers.");
+                return 0;
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Error: Cannot divide by zero.");
+                return 0;
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("Error: The number is too large for Int32");
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+                return 0;
+            }
+        }
+    }
+}
